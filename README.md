@@ -28,7 +28,7 @@ Open src/titanic_report_milestone1.ipynb in Jupyter Lab and under the "Kernel" m
 
 ## Report
 
-The final report can be found here - link
+The final report can be found here - [link](https://ubc-mds.github.io/What-Effects-One-Chance-of-Survival-on-the-Titanic-A-Logistic-Regression-Analysis/analysis_titanic_survival.html)
 
 ## Dependencies
 
