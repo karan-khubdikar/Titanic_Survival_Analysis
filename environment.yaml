@@ -1,0 +1,35 @@
+name: '522_group4_M1'
+channels:
+    - defaults
+    - conda-forge
+    - r
+dependencies:
+    - python=3.11.*
+    - pip
+    - ipykernel
+    - nb_conda_kernels
+    - panel
+    - r-base>=4.1
+    - r-essentials
+    - r-devtools
+    - r-gert
+    - r-usethis
+    - r-testthat
+    - r-startup
+    - r-rmarkdown
+    - r-stringi
+    - r-tidyverse
+    - r-hmisc
+    - r-rjson
+    - r-ggally
+    - r-ggthemes
+    - r-cowplot
+    - r-irkernel
+    - r-titanic #Titanic Data
+    - r-knitr
+    - r-gridExtra
+    - r-dplyr
+    - pip:
+        titanic
+ 
+
