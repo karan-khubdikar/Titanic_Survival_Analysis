@@ -1,5 +1,5 @@
 library(testthat)
-source("functions/data_wrangling_functions.R")
+source("../../R/data_wrangling_functions.R")
 
 #Testing our select_columns() function
 
