@@ -28,7 +28,7 @@ USER ${NB_UID}
 
 # R packages including IRKernel which gets installed globally.
 # r-e1071: dependency of the caret R package
-RUN mamba install --yes \
+RUN conda install --yes \
     'python' \
     'pip' \
     'ipykernel' \
@@ -55,6 +55,6 @@ RUN mamba install --yes \
     'r-gridExtra' \
     'r-dplyr' \
     'unixodbc' && \
-    mamba clean --all -f -y && \
+    conda clean --all -f -y && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
