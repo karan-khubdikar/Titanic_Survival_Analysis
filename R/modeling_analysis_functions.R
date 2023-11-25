@@ -34,3 +34,28 @@ fit_logistic_model <- function(dataset, target, features) {
   
   return(logistic_model)
 }
+
+# Creates a summary table for a logistic regression model
+#
+# This function takes a fitted logistic regression model and produces
+# a summary table. The table includes terms, estimates, standard errors,
+# z-values, and p-values for each coefficient.
+#
+# Args:
+#   model: A glm object representing a fitted logistic regression model.
+#
+# Returns:
+#   A dataframe containing the summary statistics of the model coefficients.
+create_model_summary_table <- function(model) {
+  model_summary <- summary(model)
+
+  results_table <- data.frame(
+    Term = rownames(model_summary$coefficients),
+    Estimate = model_summary$coefficients[, "Estimate"],
+    StdError = model_summary$coefficients[, "Std. Error"],
+    zValue = model_summary$coefficients[, "z value"],
+    Pr = model_summary$coefficients[, "Pr(>|z|)"]
+  )
+
+  return(results_table)
+}
