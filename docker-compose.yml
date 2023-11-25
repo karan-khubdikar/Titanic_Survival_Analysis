@@ -1,0 +1,12 @@
+services:
+  titanic_lr_analysis:
+    image: sampsonyu/dsci522-group-dockerfile:1954358
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/home/jovyan/work
+    deploy:
+      resources:
+        limits:
+          memory: 5G
+    platform: linux/amd64
