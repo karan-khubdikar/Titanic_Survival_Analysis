@@ -26,7 +26,6 @@ test_that("`fit_logistic_model` should return correct estimated values", {
 test_data <- generate_test_data()
 test_model <- fit_test_model(test_data)
 
-<<<<<<< Updated upstream
 # Get the expected output for comparison
 expected_result <- expected_output()
 
@@ -55,6 +54,3 @@ test_that("create_model_summary_table handles incorrect input", {
   expect_error(create_model_summary_table(NULL))
   expect_error(create_model_summary_table("not a model"))
 })
-=======
-
->>>>>>> Stashed changes
