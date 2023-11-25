@@ -67,6 +67,7 @@ The analysis leverages the *Titanic Passenger Survival Data Set*, which is a com
     testthat::test_dir("tests/testthat")
     ```
 If all tests pass, the output should look like this:
+
 ![R Test Results](img/r-test-results.png)
 
 ## Report
