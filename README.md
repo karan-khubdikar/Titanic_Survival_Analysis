@@ -1,30 +1,73 @@
 # Titanic survivor prediction by DSCI_522_Group-4
 
-This is an analysis of what features are correlated to the survival of Titanic.
+An analytical exploration into the factors influencing survival rates on the RMS Titanic.
 
 ## Author
 
-Sam Fo, Sampson Yu, Karan Khubdikar, Alan Powichrowshi
+- Sam Fo
+- Sampson Yu
+- Karan Khubdikar
+- Alan Powichrowshi
 
 ## About
 
-In our Titanic Survival Data Analysis, we delve into the factors that influenced passenger survival on this historic voyage. Leveraging advanced data analytics, we explore various elements such as passenger class, age, gender, and embarkation point to unravel patterns and insights that shaped the likelihood of survival.
+This project analyzes the Titanic passenger data, we delve into the factors that influenced passenger survival on this historic voyage. Leveraging advanced data analytics, we explore various elements such as passenger class, age, gender, and embarkation point to unravel patterns and insights that shaped the likelihood of survival.
 
-The data set being used in the report and which the analysis will be based on is the *Titanic Passenger Survival Data Set* data set, which is a compilation of passenger data from RMS Titanic.
+The analysis leverages the *Titanic Passenger Survival Data Set*, which is a compilation of passenger data from RMS Titanic. The analysis will be conducted using R and Python.
+
+## Usage Instructions
+
+### Setup
+
+1. **Install Docker**: Download and install Docker from [Docker's official site](https://www.docker.com/get-started/). After installation, ensure that Docker is running on your computer.
+
+2. **Clone the Repository**: Use Git to clone the project's repository to your local machine.
+
+### Running the Analysis
+
+1. **Start Docker Compose**: Open the command line, navigate to the project's root directory, and run:
+
+    ``` 
+    docker compose up
+    ```
+
+2. **Access Jupyter Lab**: After running the command, a URL should appear in the terminal. It will look something like `http://127.0.0.1:8888/lab?token=`. Copy and paste this URL into your web browser to access Jupyter Lab.
+
+ ![Jupyter Container Web App Launch URL](img/jupyter-container-web-app-launch-url.png)
+
+3. **Execute the Notebook**: In Jupyter Lab, open `src/analysis_titanic_survival.ipynb`. Then, go to the "Kernel" menu, select "Restart Kernel and Run All Cells...".
+
+### Clean Up
+
+1. **Shutdown and Clean Up**: To stop the Docker container, press `Ctrl` + `C` in the terminal where the container is running. Then run:
+    
+    ```
+    docker compose rm
+    ```
+
+## Developer Notes
+
+### Adding a New Dependency
+
+1. **Modify Dockerfile**: Add the new dependency to the `Dockerfile`. Create a new branch for these changes.
+
+2. **Build Docker Image Locally**: Ensure the Docker image builds and runs correctly on your local machine.
+
+3. **Push Changes to GitHub**: After verifying the local build, push your changes to GitHub. This will trigger an automated build and push of the Docker image to Docker Hub, tagged with the commit SHA.
+
+4. **Update Docker Compose File**: On your branch, update `docker-compose.yml` to use the new Docker image version. Be sure to change the image tag accordingly.
+
+5. **Open a Pull Request**: Create a pull request to merge your branch into the `main` branch.
 
 
-## Usage
+### Running Tests
 
-First time running the project, run the following from the root of this repository:
-```bash
-conda env create --file environment.yml
-```
-To run the analysis, run the following from the root of this repository:
-```bash
-conda activate 522_group4_M1
-jupyter lab 
-```
-Open src/titanic_report_milestone1.ipynb in Jupyter Lab and under the "Kernel" menu click "Restart Kernel and Run All Cells...".
+- **Testing R Functions**: Tests for R functions are implemented using the `testthat` package. To execute these tests, navigate to the project's root directory and run the following command in R or RStudio:
+    ```
+    testthat::test_dir("tests/testthat")
+    ```
+If all tests pass, the output should look like this:
+![R Test Results](img/r-test-results.png)
 
 ## Report
 
