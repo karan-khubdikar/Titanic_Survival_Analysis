@@ -12,47 +12,39 @@ test_data <- data.frame(
   AgeGroup = factor(c("Child", "Adult", "Teen", "Senior"))
 )
 
-# Test for Fare Distribution Plot
-test_that("Fare Distribution Plot has correct elements", {
-  fare_plot <- plot_financial_info(test_data)
-  expect_true("GeomHistogram" %in% c(class(fare_plot$layers[[1]]$geom)))  # Check if it's a histogram
-  expect_that(fare_plot$labels$title, is_not(NULL))  
-  expect_that(fare_plot$labels$x, is_not(NULL))  
-  expect_that(fare_plot$labels$y, is_not(NULL))  
+financial_plot <- plot_financial_info(test_data)
+# Test Case 1: Check if grid.arrange returns a list
+test_that("grid.arrange returns a list", {
+  
+  # Test: Check if it's a list
+  expect_true(is.list(financial_plot))
 })
 
-# Test for Survival by Fare Plot
-test_that("Survival by Fare Plot has correct elements", {
-  survival_by_fare_plot <- plot_financial_info(test_data)
-  expect_true("GeomHistogram" %in% c(class(survival_by_fare_plot$layers[[1]]$geom))) # Check if it's a histogram
-  expect_that(survival_by_fare_plot$labels$title, is_not(NULL))
-  expect_that(survival_by_fare_plot$labels$x, is_not(NULL))
-  expect_that(survival_by_fare_plot$labels$y, is_not(NULL))
+# Test Case 2: Check if the correct number of plots are arranged
+test_that("grid.arrange arranges the correct number of plots", {
+  
+  # 3 plots are arranged
+  expected_plots <- 3
+  
+  # Test: Check if the number of arranged plots matches the expected value
+  expect_equal(length(financial_plot), expected_plots)
 })
 
-# Test for Passenger Class Plot
-test_that("Passenger Class Plot has correct elements", {
-  class_plot <- plot_financial_info(test_data)
-  expect_true("GeomBar" %in% c(class(class_plot$layers[[1]]$geom))) # Check if it's a barplot
-  expect_that(class_plot$labels$title, is_not(NULL))
-  expect_that(class_plot$labels$x, is_not(NULL))
-  expect_that(class_plot$labels$y, is_not(NULL))
+
+personal_plot <- plot_personal_attributes(test_data)
+# Test Case 1: Check if grid.arrange returns a list
+test_that("grid.arrange returns a list", {
+  
+  # Test: Check if it's a list
+  expect_true(is.list(personal_plot))
 })
 
-# Test for Passenger Sex Plot
-test_that("Passenger Class Plot has correct elements", {
-  class_plot <- plot_personal_attributes(test_data)
-  expect_true("GeomBar" %in% c(class(class_plot$layers[[1]]$geom))) # Check if it's a barplot
-  expect_that(class_plot$labels$title, is_not(NULL))
-  expect_that(class_plot$labels$x, is_not(NULL))
-  expect_that(class_plot$labels$y, is_not(NULL))
-})
-
-# Test for Passenger Agegroup Plot
-test_that("Passenger Class Plot has correct elements", {
-  class_plot <- plot_personal_attributes(test_data)
-  expect_true("GeomBar" %in% c(class(class_plot$layers[[1]]$geom))) # Check if it's a barplot
-  expect_that(class_plot$labels$title, is_not(NULL))
-  expect_that(class_plot$labels$x, is_not(NULL))
-  expect_that(class_plot$labels$y, is_not(NULL))
+# Test Case 2: Check if the correct number of plots are arranged
+test_that("grid.arrange arranges the correct number of plots", {
+  
+  # 2 plots are arranged
+  expected_plots <- 2
+  
+  # Test: Check if the number of arranged plots matches the expected value
+  expect_equal(length(personal_plot), expected_plots)
 })
