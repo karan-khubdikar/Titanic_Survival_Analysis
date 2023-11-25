@@ -68,7 +68,7 @@ The analysis leverages the *Titanic Passenger Survival Data Set*, which is a com
     ```
 If all tests pass, the output should look like this:
 
-![R Test Results](img/r-test-results.png)
+![R Test Results](img/r-test-results-m2.png)
 
 ## Report
 
