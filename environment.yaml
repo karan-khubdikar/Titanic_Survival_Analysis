@@ -4,12 +4,12 @@ channels:
     - conda-forge
     - r
 dependencies:
-    - python=3.11.*
-    - pip
-    - ipykernel
-    - nb_conda_kernels
+    - python=3.11.6
+    - pip=23.3.1
+    - ipykernel=6.26
+    - nb_conda_kernels=2.3.1
     - panel
-    - r-base>=4.1
+    - r-base=4.1
     - r-essentials
     - r-devtools
     - r-gert
@@ -29,7 +29,9 @@ dependencies:
     - r-knitr
     - r-gridExtra
     - r-dplyr
-    - pip:
-        titanic
+    - jupyter-book=0.15.1
+    - ipython=8.15.0
+    - notebook=7.0.6
+    - r-docopt
  
 
