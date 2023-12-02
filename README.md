@@ -35,7 +35,32 @@ The analysis leverages the *Titanic Passenger Survival Data Set*, which is a com
 
  ![Jupyter Container Web App Launch URL](img/jupyter-container-web-app-launch-url.png)
 
-3. **Execute the Notebook**: In Jupyter Lab, open `src/analysis_titanic_survival.ipynb`. Then, go to the "Kernel" menu, select "Restart Kernel and Run All Cells...".
+3. **Execute the Notebook and Run the analysis**: Run the following commands in the terminal, make sre you are in the project root.
+
+```
+# Processing and Wrangling Data
+# Selecting wanted columns from Titanic Data and save to Processed data folder
+Rscript scripts/column_selection_script.R "data/Processed/selected_columns.csv"
+
+# Wrangling and Cleaning Data and save to Processed data folder 
+Rscript scripts/clean_and_organize_script.R "data/Processed/selected_columns.csv" "data/Processed/clean_wrangled_titanic_data.csv"
+
+# EDA and save image to results section
+# Produce EDA plots for financial aspects and personal aspects of passengers
+Rscript scripts/EDA_scripts.R --dataset=data/Processed/clean_wrangled_titanic_data.csv --out_dir=results/plots/
+
+# Analysis Modeling
+# Produce and fit logistic regression model and save to results model section
+Rscript scripts/fit_logistic_model.R 'data/Processed/clean_wrangled_titanic_data.csv' 'Survived' "Pclass + Sex + SibSp + Parch + Fare + AgeGroup" "./results/models"
+
+# Results Summary
+# Produce organized table of model outputs and summary and save to results tables section
+Rscript ./scripts/generate_result.R --model_file=./results/models/logistic_model.rds --out_dir=./results/models
+
+# build HTML report and copy build to docs folder
+jupyter-book build report
+cp -r report/_build/html/* docs
+```
 
 ### Clean Up
 
