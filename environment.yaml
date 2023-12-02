@@ -9,7 +9,7 @@ dependencies:
     - ipykernel=6.26
     - nb_conda_kernels=2.3.1
     - panel
-    - r-base=4.1
+    - r-base=4.3
     - r-essentials
     - r-devtools
     - r-gert
@@ -33,5 +33,7 @@ dependencies:
     - ipython=8.15.0
     - notebook=7.0.6
     - r-docopt
+    - r-png
+    - r-grid
  
 
