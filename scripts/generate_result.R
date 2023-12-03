@@ -28,7 +28,7 @@ main <- function(model_file, out_dir) {
   summary_table <- create_model_summary_table(model)
 
   # Save the summary table
-  saveRDS(summary_table, file = paste0(out_dir, "/model_summary_table.rds"))
+  write.csv(summary_table, file = paste0(out_dir, "/model_summary_table.csv"))
 }
 
 # Execute the main function
