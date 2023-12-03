@@ -57,8 +57,7 @@ RUN conda install --yes \
     'ipython=8.15.0' \
     'notebook=7.0.6' \
     'r-docopt' \
-    'r-png' \
-    'r-grid' && \
+    'r-png' && \
     conda clean --all -f -y && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
