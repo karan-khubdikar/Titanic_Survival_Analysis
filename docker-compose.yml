@@ -1,6 +1,6 @@
 services:
   titanic_lr_analysis:
-    image: sampsonyu/dsci522-group-dockerfile:1954358
+    image: sampsonyu/dsci522-group-dockerfile:af85f1d
     ports:
       - "8888:8888"
     volumes:
