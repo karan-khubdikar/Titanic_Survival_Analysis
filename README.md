@@ -74,7 +74,7 @@ cp -r report/_build/html/* docs
 
 ### Adding a New Dependency
 
-1. **Modify Dockerfile**: Add the new dependency to the `Dockerfile`. Create a new branch for these changes.
+1. **Modify Dockerfile**: Add the new dependency to the `Dockerfile`. Create a new branch for these changes. 
 
 2. **Build Docker Image Locally**: Ensure the Docker image builds and runs correctly on your local machine.
 
