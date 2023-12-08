@@ -6,7 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- New feature or enhancement.
+- In analysis_titanic_survival.ipynb, explanation to why logisitc regression is chosen
+- In analysis_titanic_survival.ipynb, explanation to why Ticket ID is dropped despite it appearing to contain information that can be used to train the model
 
 ### Changed
 
