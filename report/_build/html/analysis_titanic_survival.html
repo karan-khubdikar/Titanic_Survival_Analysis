@@ -1,0 +1,687 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>What Factors Contribute to Surviving on a Sinking Ship - A Deep Dive into the Titanic &#8212; What Factors Contribute to Surviving on a Sinking Ship - A Deep Dive into the Titanic</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'analysis_titanic_survival';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">What Factors Contribute to Surviving on a Sinking Ship - A Deep Dive into the Titanic</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    What Factors Contribute to Surviving on a Sinking Ship - A Deep Dive into the Titanic
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/analysis_titanic_survival.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>What Factors Contribute to Surviving on a Sinking Ship - A Deep Dive into the Titanic</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-and-analysis">Methodology and Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-regression">Logistic Regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consideration-of-other-models">Consideration of other models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-from-data-set">Selecting From Data Set</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploratory-data-analysis">Exploratory Data Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-discussion-of-logistic-regression">Results &amp; Discussion of Logistic Regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-the-findings">Summary of the Findings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="what-factors-contribute-to-surviving-on-a-sinking-ship-a-deep-dive-into-the-titanic">
+<h1>What Factors Contribute to Surviving on a Sinking Ship - A Deep Dive into the Titanic<a class="headerlink" href="#what-factors-contribute-to-surviving-on-a-sinking-ship-a-deep-dive-into-the-titanic" title="Permalink to this heading">#</a></h1>
+<p>By: Alan Powichrowski, Karan Khubdikar, Sam Fo, Sampson Yu</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>The sinking of the RMS Titanic, was one of the most tragic and known aquatic disasters to have ever occurred in maritime history - and is still constantly explore to this day<span id="id1">[<a class="reference internal" href="#id12" title="Seth Cline. The 8 worst cruise ship disasters. 2013.">Cline, 2013</a>]</span>. On April 1912, the RMS Titanic collided with an iceberg, which lead to its sinking and the death of over 1500 people. Every year roughly 200 people die on cruises, with the last significant maritime cruise accident being the Costa Concordia in 2012, which resulted in 32 deaths and 64 injuries <span id="id2">[<a class="reference internal" href="#id13" title="Space Coast Daily. How many crew members die on cruise ships each year. 2023.">Daily, 2023</a>]</span>. Events like this serve as an opportunity to study safety as well as human behavior and aspects relating to ones ability to survive a catastrophic event.</p>
+<p>Numerous groups and bodies have explored the historic consequences and results of the Titanic’s sinking, however, there remains a need to statistically break down and analyze the underlying factors that influence ones ability to survive a situation like this. The analysis seeks to understand the complexities surrounding individuals ability to survive a maritime disaster, using ‘Paul Hendricks’ Titanic data as a case study. We aim to investigate factors that contribute to understanding what elements are associated with ones ability to survive a sinking ship. To achieve appropriate results we will employ the method of Logistic Regression - a classification method used for exploring the relationships between a binary dependent or target variable (survival) and one or more independent variables of predictors (attributes of individuals on the Titanic). This approach will allow us to estimate the probability of the outcome of survival based on various input factors from the data set for each observation. We would be using R, <span id="id3">[<a class="reference internal" href="#id10" title="R Developement Core Team. R: a language and environment for statistical computing. (No Title), 2010.">Team, 2010</a>]</span> and its packages <span id="id4">[<a class="reference internal" href="#id14" title="Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. R for data science. &quot; O'Reilly Media, Inc.&quot;, 2023.">Wickham <em>et al.</em>, 2023</a>]</span>,<span id="id5">[<a class="reference internal" href="#id11" title="Hadley Wickham, Romain François, Lionel Henry, Kirill Müller, and others. Dplyr: a grammar of data manipulation. R package version 0.4, 3:p156, 2015.">Wickham <em>et al.</em>, 2015</a>]</span> and python <span id="id6">[<a class="reference internal" href="#id15" title="Guido Van Rossum and Fred L. Drake. Python 3 Reference Manual. CreateSpace, Scotts Valley, CA, 2009. ISBN 1441412697.">Van Rossum and Drake, 2009</a>]</span> to perform the analysis of this project.</p>
+</section>
+<section id="data">
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h2>
+<p>The data set being used in the report and which the analysis will be based on is the <em>Titanic Passenger Survival Data Set</em> data set <span id="id7">[<a class="reference internal" href="#id9" title="P Hendricks. Titanic: titanic passenger survival data set. R package version 0.1. 0, 2015.">Hendricks, 2015</a>]</span>, which is a compilation of passenger data from RMS Titanic. This data set is available and accessible through the ‘titanic’ library in R, or through the <a class="reference external" href="https://github.com/paulhendricks/titanic/tree/master">Titanic GitHub repository</a>. This package was created in 2015 by <em>Paul Hendricks</em>, and includes important features such as age, sex, ticket class, survival status, and many others. The data package contains two data sets one for training with 891 observations and one for testing with 418 observations, where each observations is a separate passenger from the Titanic - the data contains 12 variables defining unique characteristics of each passenger. The data set contains a breadth of variables such a personal features and socio-economic information which will be fruitful in the exploration of factors effecting ones survival.</p>
+</section>
+<section id="methodology-and-analysis">
+<h2>Methodology and Analysis<a class="headerlink" href="#methodology-and-analysis" title="Permalink to this heading">#</a></h2>
+<section id="logistic-regression">
+<h3>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this heading">#</a></h3>
+<p>For the analysis as mention we will be implementing a Logistic Regression model - this is a statistical method for modeling the probability of a binary outcome based on one or more predictors. In the context of our study, our binary outcome variable or target will be ‘Survived’ (denoted as ‘1’ for survived and ‘0’ for did not survive), which represents if a passenger survived the accident that occurred on the Titanic. We will be exploring the available predictors in the data set and determining which to use for the model using our reasoning with regards to what information they contribute and if they may cause multicollinearity. The predictors we will chose from are: Passenger ID, Passenger Class, Name, Sex, Age, Number of Siblings or Spouses as passenger has on board, number of Parents or Children a passenger has on board, Ticket Number, Ticket Fare, Cabin Location, ad which Port they embarked from.</p>
+<p>Logistic Regression can be mathematically represented as:</p>
+<div class="math notranslate nohighlight">
+\[log(\frac{p}{1-p})=\beta_{0}+\beta_{1}X_{1}+\beta_{2}X_{2}+\cdots+\beta_{n}X_{n}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(p\)</span> represents the probability of an event of interest occurring which in our case is survival, <span class="math notranslate nohighlight">\(\frac{p}{1-p}\)</span> which is the log odds of that event occurring - which we can deduce the <span class="math notranslate nohighlight">\(p\)</span> from:</p>
+<div class="math notranslate nohighlight">
+\[p=\frac{e^{log(\frac{p}{1-p})}}{1+e^{\frac{p}{1-p}}}\]</div>
+<p>We also have <span class="math notranslate nohighlight">\(X_{1}, X_{2},\cdots,X_{n}\)</span> are the predictor variable values, and <span class="math notranslate nohighlight">\(\beta_{0},\beta_{1},\cdots,\beta_{n}\)</span> are the coefficients estimated by the model representing how the variables contribute to our log odds, when there is a one-unit change in the predictor. The <span class="math notranslate nohighlight">\(X\)</span> values will be represented by the features that we define as relevant for the analysis from our data set, these will include elements such as age, sex, passenger class, etc.</p>
+</section>
+<section id="consideration-of-other-models">
+<h3>Consideration of other models<a class="headerlink" href="#consideration-of-other-models" title="Permalink to this heading">#</a></h3>
+<p>We have considered employing other models including SVC, Random Forest, and Gradient Boosted Decision Trees in the analysis but we are motivated to solely use logisitic regression by the following factors:</p>
+<ol class="arabic simple">
+<li><p>Ease of interpretation: Logisitic regression estimates a set of slopes and an intercept, and all that estimates can be easily interpreted - a positive (negative) slope estimate indicates a postive (negative) association between that corresponding regressor and the target. Non-linear models are typically more difficult to interpret.</p></li>
+<li><p>Computationally inexpensive: The time and computational resources to run a logisitic regression is significantly smaller than other models that we have considered. Employing only logistic regression would reduce the time required to reproduce this analysis.</p></li>
+</ol>
+</section>
+<section id="selecting-from-data-set">
+<h3>Selecting From Data Set<a class="headerlink" href="#selecting-from-data-set" title="Permalink to this heading">#</a></h3>
+<p>In applying the Logistic Regression model to the Titanic Data set we aim to explore how different variables influence the likelihood of survival. Since we are only exploring estimation and understanding the relationship between our target and the predictors we will be using the training data set provided in order to fit our model and understand the relationships between features and the target. Contextually we will also select variables that make sense logically as well as in terms of contribution to avoid multicollinearity or variables that are redundant.</p>
+<p>To start off we will be dropping the values that are unique and carry very little information that could help our model in its estimations, these will be predictors such as Passenger ID, Name of Passenger, and Ticket ID. At first glance, the Ticket IDs are encoded with interesting prefixes, e.g. A/5, STON/O2., etc, which might provide explantory power. However, we have found that not all tickets IDs contain such prefix, and including them would introduce noise to the model fitting. Presumably these prefixes are related to the Passenger Class, including ticket ID as a regressor risks introducing multicollinearity.</p>
+<p>We also want to work on a complete data set, to avoid any unnecessary assumptions being made for imputing on missing values we will drop the Cabin variable as it is very spare and has a large number of missing values - In addition to this we will be dropping the Embarking Location variable as where the passengers got onto the ship is not relevant to the analysis since they were all on the ship once the catastrophe occurred. Regarding the variables that we are keeping, we will keep Passenger Class as this represents where in the boat they were located which can reflect their ease of exit, we will include Fare as this represents socio-economic status of how much was spent on their ticket which could result in a favorable outcome for them, we kept age and sex as this relates to the idea of ‘women and children first’ which is known as the Birkenhead Drill and is very relevant in maritime travel, we next include Sibling/Spouse and Parent/Children count to understand how one party on the boat could affect their changes of survival.</p>
+</section>
+</section>
+<section id="exploratory-data-analysis">
+<h2>Exploratory Data Analysis<a class="headerlink" href="#exploratory-data-analysis" title="Permalink to this heading">#</a></h2>
+<p>We will be exploring the variables and features in the data set to understand their distributions and relationships. As mentioned before we will be looking at the variable Survived, Passenger Class, Sex, Number of Siblings or Spouses, Number of Children or Parents, Fare, and Age - however, we have binned our age into groups of 0-12 as Child, 13-18 as ‘Teen’, 19-60 as Adult, and over 60 as Senior. We have decided to explore the distributions of the variables and understand how they relate to our target of Survival. The plots below display the distribution of Fare, how Passenger Class relates to Survival, as well as how Sex and Age Group relates to survival.</p>
+<figure class="align-default" id="finplot">
+<a class="reference internal image-reference" href="_images/financial_plot.png"><img alt="_images/financial_plot.png" src="_images/financial_plot.png" style="height: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Distribution of Fare Price across Titanic Patrons</span><a class="headerlink" href="#finplot" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="perplot">
+<a class="reference internal image-reference" href="_images/personal_plot.png"><img alt="_images/personal_plot.png" src="_images/personal_plot.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Distribution by sex and age group</span><a class="headerlink" href="#perplot" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Looking at the plots we can see that there are a few trends to note, which could be interesting to look into when exploring our data and the relationship between the target and predictors. First we can see there is a right skew in fare price, the distribution has most counts to the left meaning a majority of patrons paid under 100 dollars for their ticket. We can then look at how this relates to Survival rate among the different classes of passengers - we can see as we traverse from 1st class to third, there are lower rates of survival, this could lead us to believe there is a relationship here and contextually it could be that the first class passengers had rooms higher up in the vessel which were safer when fleeing the boat. Next looking at Survival by Se we can see that female passengers had a much higher survival rate than those of male patrons, also looking at survival rate by age group we can see hat children had the highest survival rate while seniors had the lowest - the older you are the lower your survival rate it seems like. This EDA is very insightful and helpful for seeing that there may be relationships between our target and predictor variables - we will now move on to modeling.</p>
+</section>
+<section id="results-discussion-of-logistic-regression">
+<h2>Results &amp; Discussion of Logistic Regression<a class="headerlink" href="#results-discussion-of-logistic-regression" title="Permalink to this heading">#</a></h2>
+<p>The Logistic Regression model that was fit follows the following form, with dummy variables to represent the classes from the categorical values:</p>
+<div class="math notranslate nohighlight">
+\[log(\frac{p}{1-p}) = \beta_0 + \beta_{Class = 1} + \beta_{Class = 2} + \beta_{Class = 3}+ \beta_{Sex = Female} + \beta_{Sex = Male}\]</div>
+<div class="math notranslate nohighlight">
+\[+ \beta_{Count\;Sibling\;Spouse}+ \beta_{Count\;Parent\;Child} + \beta_{Fare} + \beta_{AgeGroup=Child}\]</div>
+<div class="math notranslate nohighlight">
+\[+ \beta_{AgeGroup=Teen} + \beta_{AgeGroup=Adult} + \beta_{AgeGroup=Senior}\]</div>
+<figure class="align-default" id="id16">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>Term</th>
+      <th>Estimate</th>
+      <th>StdError</th>
+      <th>zValue</th>
+      <th>Pr</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>(Intercept)</td>
+      <td>(Intercept)</td>
+      <td>3.554690</td>
+      <td>0.437744</td>
+      <td>8.120476</td>
+      <td>4.643578e-16</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Pclass</td>
+      <td>Pclass</td>
+      <td>-1.019174</td>
+      <td>0.153308</td>
+      <td>-6.647898</td>
+      <td>2.973080e-11</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Sexmale</td>
+      <td>Sexmale</td>
+      <td>-2.761124</td>
+      <td>0.228093</td>
+      <td>-12.105254</td>
+      <td>9.906211e-34</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>SibSp</td>
+      <td>SibSp</td>
+      <td>-0.551387</td>
+      <td>0.143347</td>
+      <td>-3.846523</td>
+      <td>1.198058e-04</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Parch</td>
+      <td>Parch</td>
+      <td>-0.225185</td>
+      <td>0.130543</td>
+      <td>-1.724990</td>
+      <td>8.452928e-02</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Fare</td>
+      <td>Fare</td>
+      <td>0.004231</td>
+      <td>0.002795</td>
+      <td>1.513444</td>
+      <td>1.301669e-01</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>AgeGroupChild</td>
+      <td>AgeGroupChild</td>
+      <td>2.327426</td>
+      <td>0.420522</td>
+      <td>5.534615</td>
+      <td>3.119123e-08</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>AgeGroupSenior</td>
+      <td>AgeGroupSenior</td>
+      <td>-1.104911</td>
+      <td>0.602355</td>
+      <td>-1.834319</td>
+      <td>6.660663e-02</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>AgeGroupTeen</td>
+      <td>AgeGroupTeen</td>
+      <td>0.130904</td>
+      <td>0.353585</td>
+      <td>0.370221</td>
+      <td>7.112180e-01</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Model Summary</span><a class="headerlink" href="#id16" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Out base model is one with Passengers that are Female, are in First Class, and are in the age group of Child. We can now look at the results of our logistic regression model and inspect the coefficient values to understand what predictors effect the log odds and probability of someone surviving the Titanic.</p>
+<p>The logistic regression results provide valuable insights into the factors affecting the likelihood of survival on the Titanic. Each coefficient in the table represents the log odds of survival for each unit change in the predictor, while holding all other predictors constant.</p>
+<ul class="simple">
+<li><p>Intercept (4.8361): This value indicates the log odds of survival when all other predictors are at their reference level. In this context, it is the baseline log odds of survival for a passenger when all other variables are zero.</p></li>
+<li><p>Passenger Class (Pclass2: -0.9711, Pclass3: -2.0246): These coefficients suggest that being in the 2nd or 3rd class significantly decreases the odds of survival compared to being in the 1st class. The negative values indicate that as we move from the 1st class to lower classes, the likelihood of survival decreases.</p></li>
+<li><p>Gender (Sexmale: -2.7582): This significant negative coefficient for male passengers indicates that being male greatly reduces the odds of survival compared to female passengers.</p></li>
+<li><p>Siblings/Spouses Aboard (SibSp: -0.5511): A negative coefficient implies that an increase in the number of siblings or spouses aboard decreases the survival probability.</p></li>
+<li><p>Parents/Children Aboard (Parch: -0.2260): Similarly, this suggests that having more parents or children aboard slightly decreases the chances of survival</p></li>
+<li><p>Fare (0.0044): The positive coefficient for fare implies that higher fares slightly increase the odds of survival, possibly reflecting higher socio-economic status and access to better resources.</p></li>
+<li><p>Age Group (Teen: -2.1938, Adult: -2.3263, Senior: -3.4196): These negative coefficients indicate that being a teenager, adult, or senior decreases the odds of survival compared to being a child. The effect is most pronounced for seniors.</p></li>
+</ul>
+</section>
+<section id="summary-of-the-findings">
+<h2>Summary of the Findings<a class="headerlink" href="#summary-of-the-findings" title="Permalink to this heading">#</a></h2>
+<p>This data analysis report focuses on identifying the factors that contributed to survival during the sinking of the RMS Titanic, using logistic regression analysis. The Titanic dataset contains information about passengers such as age, sex, ticket class, and survival status. The analysis aims to pinpoint specific attributes that influenced the likelihood of survival.</p>
+<ul class="simple">
+<li><p>Passenger Class: There’s a clear negative correlation between passenger class and survival probability. Passengers in lower classes (2nd and 3rd) had significantly lower odds of surviving compared to those in 1st class.</p></li>
+<li><p>Gender: Female passengers had a much higher chance of survival than male passengers.</p></li>
+<li><p>Age: Age groups also played a critical role. Children had a higher survival rate, while seniors had the lowest.</p></li>
+<li><p>Socio-Economic Status: Represented by fare, it had a lesser impact on survival probability.</p></li>
+</ul>
+<p>In summary, the analysis provides a detailed understanding of the factors influencing survival on the Titanic. Class and gender emerged as the most significant factors, followed by age. These findings highlight the social hierarchies and norms of the time, where women and children, particularly from higher social classes, were given priority during rescue efforts. Such analyses not only shed light on historical events but also offer valuable insights for modern maritime safety and disaster management strategies.</p>
+</section>
+<section id="limitations">
+<h2>Limitations:<a class="headerlink" href="#limitations" title="Permalink to this heading">#</a></h2>
+<p>As seen in the report we made use of a logistic regression model for our analysis, however the model was never tested on any testing data as we only looked to explore relationships rather than make predictions. This limitation could be addressed in the future by applying our model to a test dataset and identifying its performance through looking at accuracy, precision, recall, and an ROC curve.
+Additionally, if we had more time, it would be worth while to also model this data and the relationships using other models such as Decision Trees, Random Forests, or Support Vector Machines for classification. There may be more complex relationships to explore and testing this with various models could be beneficial when finding the true relationship between the target and our features. We would also like to explore a more robust method of feature selection (such as cross validation) rather than just choosing our features contextually and through 3rd party knowledge – as there may be multicollinearity that we are not accounting for and or assumptions through the method we employed. These additional efforts would help create a more robust model that we could then apply to maritime data that spans beyond the data of just Titanic patrons.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<div class="docutils container" id="id8">
+<dl class="citation">
+<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id1">Cli13</a></span></dt>
+<dd><p>Seth Cline. The 8 worst cruise ship disasters. 2013.</p>
+</dd>
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id2">Dai23</a></span></dt>
+<dd><p>Space Coast Daily. How many crew members die on cruise ships each year. 2023.</p>
+</dd>
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id7">Hen15</a></span></dt>
+<dd><p>P Hendricks. Titanic: titanic passenger survival data set. <em>R package version 0.1. 0</em>, 2015.</p>
+</dd>
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id3">Tea10</a></span></dt>
+<dd><p>R Developement Core Team. R: a language and environment for statistical computing. <em>(No Title)</em>, 2010.</p>
+</dd>
+<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id6">VRD09</a></span></dt>
+<dd><p>Guido Van Rossum and Fred L. Drake. <em>Python 3 Reference Manual</em>. CreateSpace, Scotts Valley, CA, 2009. ISBN 1441412697.</p>
+</dd>
+<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id5">WFranccoisH+15</a></span></dt>
+<dd><p>Hadley Wickham, Romain François, Lionel Henry, Kirill Müller, and others. Dplyr: a grammar of data manipulation. <em>R package version 0.4</em>, 3:p156, 2015.</p>
+</dd>
+<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id4">WcCetinkayaRG23</a></span></dt>
+<dd><p>Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. <em>R for data science</em>. &quot; O'Reilly Media, Inc.&quot;, 2023.</p>
+</dd>
+</dl>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-and-analysis">Methodology and Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-regression">Logistic Regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consideration-of-other-models">Consideration of other models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-from-data-set">Selecting From Data Set</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploratory-data-analysis">Exploratory Data Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-discussion-of-logistic-regression">Results &amp; Discussion of Logistic Regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-the-findings">Summary of the Findings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alan Powichrowski, Karan Khubdikar, Sam Fo, Sampson Yu
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
