@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>What Factors Contribute to Surviving on a Sinking Ship - A Deep Dive into the Titanic &#8212; What Factors Contribute to Surviving on a Sinking Ship - A Deep Dive into the Titanic</title>
   
@@ -309,10 +309,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-and-analysis">Methodology and Analysis</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-regression">Logistic Regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consideration-of-other-models">Consideration of other models</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-from-data-set">Selecting From Data Set</a></li>
 </ul>
 </li>
@@ -335,10 +337,21 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="what-factors-contribute-to-surviving-on-a-sinking-ship-a-deep-dive-into-the-titanic">
 <h1>What Factors Contribute to Surviving on a Sinking Ship - A Deep Dive into the Titanic<a class="headerlink" href="#what-factors-contribute-to-surviving-on-a-sinking-ship-a-deep-dive-into-the-titanic" title="Permalink to this heading">#</a></h1>
 <p>By: Alan Powichrowski, Karan Khubdikar, Sam Fo, Sampson Yu</p>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<p>This report examines the historic Titanic disaster, and focuses on understanding what factors influence passengers survival in case of emergency on a vessel. We employed a statistical analysis on a plethora of parameters, such as age, sec, ticket pricing, and a number of others to determine their impact and relationship on survival likelihood of a passenger. Our report employs logistic regression analysis to understand the relationship between various parameters and survival as mentioned. Unlike predictive models, our focus is on inference, examining how factors like age, gender, class, and cabin location influenced the likelihood of survival - for this reason we only built our model off of one data set without training and testing, as we are looking to only make an inference and understand the relationship between variables. Our findings show us significant disparities, particularly highlighting the better survival chances of women and higher-class passengers - which introduces a socioeconomic factor to survival. The main results observed through our report are as followed:</p>
+<ul class="simple">
+<li><p>Passenger Class: There’s a clear negative correlation between passenger class and survival probability. Passengers in lower classes (2nd and 3rd) had significantly lower odds of surviving compared to those in 1st class.</p></li>
+<li><p>Gender: Female passengers had a much higher chance of survival than male passengers.</p></li>
+<li><p>Age: Age groups also played a critical role. Children had a higher survival rate, while seniors had the lowest.</p></li>
+<li><p>Socio-Economic Status: Represented by fare, it had a lesser impact on survival probability.</p></li>
+</ul>
+<p>The analysis, though limited by the historical data available, provides valuable insights into the social and personal dynamics of survival in maritime disasters. This report serves as a preliminary step into understanding what factors effect ones changes of survival in case of a maritime disaster, and can be built on upon with further feature engineering and model types to help move this analysis into the domain of prediction and making steps to reducing fatalities on water vessels.</p>
+</section>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>The sinking of the RMS Titanic, was one of the most tragic and known aquatic disasters to have ever occurred in maritime history - and is still constantly explore to this day<span id="id1">[<a class="reference internal" href="#id12" title="Seth Cline. The 8 worst cruise ship disasters. 2013.">Cline, 2013</a>]</span>. On April 1912, the RMS Titanic collided with an iceberg, which lead to its sinking and the death of over 1500 people. Every year roughly 200 people die on cruises, with the last significant maritime cruise accident being the Costa Concordia in 2012, which resulted in 32 deaths and 64 injuries <span id="id2">[<a class="reference internal" href="#id13" title="Space Coast Daily. How many crew members die on cruise ships each year. 2023.">Daily, 2023</a>]</span>. Events like this serve as an opportunity to study safety as well as human behavior and aspects relating to ones ability to survive a catastrophic event.</p>
-<p>Numerous groups and bodies have explored the historic consequences and results of the Titanic’s sinking, however, there remains a need to statistically break down and analyze the underlying factors that influence ones ability to survive a situation like this. The analysis seeks to understand the complexities surrounding individuals ability to survive a maritime disaster, using ‘Paul Hendricks’ Titanic data as a case study. We aim to investigate factors that contribute to understanding what elements are associated with ones ability to survive a sinking ship. To achieve appropriate results we will employ the method of Logistic Regression - a classification method used for exploring the relationships between a binary dependent or target variable (survival) and one or more independent variables of predictors (attributes of individuals on the Titanic). This approach will allow us to estimate the probability of the outcome of survival based on various input factors from the data set for each observation. We would be using R, <span id="id3">[<a class="reference internal" href="#id10" title="R Developement Core Team. R: a language and environment for statistical computing. (No Title), 2010.">Team, 2010</a>]</span> and its packages <span id="id4">[<a class="reference internal" href="#id14" title="Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. R for data science. &quot; O'Reilly Media, Inc.&quot;, 2023.">Wickham <em>et al.</em>, 2023</a>]</span>,<span id="id5">[<a class="reference internal" href="#id11" title="Hadley Wickham, Romain François, Lionel Henry, Kirill Müller, and others. Dplyr: a grammar of data manipulation. R package version 0.4, 3:p156, 2015.">Wickham <em>et al.</em>, 2015</a>]</span> and python <span id="id6">[<a class="reference internal" href="#id15" title="Guido Van Rossum and Fred L. Drake. Python 3 Reference Manual. CreateSpace, Scotts Valley, CA, 2009. ISBN 1441412697.">Van Rossum and Drake, 2009</a>]</span> to perform the analysis of this project.</p>
+<p>Numerous groups and academic bodies have explored the historic consequences and results of the Titanic’s sinking, however, there remains a need to statistically break down and analyze the underlying factors that influence ones ability to survive a situation like this. The analysis seeks to understand the complexities surrounding individuals ability to survive a maritime disaster, using ‘Paul Hendricks’ Titanic data as a case study. We aim to investigate factors that contribute to understanding what elements are associated with ones ability to survive a sinking ship. Our analysis aims to statistically infer the underlying factors influencing survival. Our approach, is different from predictive modeling. To achieve appropriate results we will employ the method of Logistic Regression - a classification method used for exploring the relationships between a binary dependent or target variable (survival) and one or more independent variables of predictors (attributes of individuals on the Titanic). As mentioned above this is an inference based approach rather than a report looking to make predictions, we are interested in the associations and coefficients between variables, and will be using a single data set in order to create a model and understand the relationships between parameters. This approach will allow us to estimate the probability of the outcome of survival based on various input factors from the data set for each observation. We would be using R, <span id="id3">[<a class="reference internal" href="#id10" title="R Developement Core Team. R: a language and environment for statistical computing. (No Title), 2010.">Team, 2010</a>]</span> and its packages <span id="id4">[<a class="reference internal" href="#id14" title="Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. R for data science. &quot; O'Reilly Media, Inc.&quot;, 2023.">Wickham <em>et al.</em>, 2023</a>]</span>,<span id="id5">[<a class="reference internal" href="#id11" title="Hadley Wickham, Romain François, Lionel Henry, Kirill Müller, and others. Dplyr: a grammar of data manipulation. R package version 0.4, 3:p156, 2015.">Wickham <em>et al.</em>, 2015</a>]</span> and python <span id="id6">[<a class="reference internal" href="#id15" title="Guido Van Rossum and Fred L. Drake. Python 3 Reference Manual. CreateSpace, Scotts Valley, CA, 2009. ISBN 1441412697.">Van Rossum and Drake, 2009</a>]</span> to perform the analysis of this project.</p>
 </section>
 <section id="data">
 <h2>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h2>
@@ -348,6 +361,7 @@ document.write(`
 <h2>Methodology and Analysis<a class="headerlink" href="#methodology-and-analysis" title="Permalink to this heading">#</a></h2>
 <section id="logistic-regression">
 <h3>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this heading">#</a></h3>
+<p>Since we are looking to understand and learn the relationships and associations between various variables and their impact on survival, we are looking to make inferences rather than predictions. This means that our report looks to fit a model on a single data set rather than use a train and testing set to examine our models ability to generalize on new data and make predictions. We are looking at our coefficients, their statistical significance, along with their magnitude to understand which values contribute to the likelihood of survival most.</p>
 <p>For the analysis as mention we will be implementing a Logistic Regression model - this is a statistical method for modeling the probability of a binary outcome based on one or more predictors. In the context of our study, our binary outcome variable or target will be ‘Survived’ (denoted as ‘1’ for survived and ‘0’ for did not survive), which represents if a passenger survived the accident that occurred on the Titanic. We will be exploring the available predictors in the data set and determining which to use for the model using our reasoning with regards to what information they contribute and if they may cause multicollinearity. The predictors we will chose from are: Passenger ID, Passenger Class, Name, Sex, Age, Number of Siblings or Spouses as passenger has on board, number of Parents or Children a passenger has on board, Ticket Number, Ticket Fare, Cabin Location, ad which Port they embarked from.</p>
 <p>Logistic Regression can be mathematically represented as:</p>
 <div class="math notranslate nohighlight">
@@ -357,9 +371,19 @@ document.write(`
 \[p=\frac{e^{log(\frac{p}{1-p})}}{1+e^{\frac{p}{1-p}}}\]</div>
 <p>We also have <span class="math notranslate nohighlight">\(X_{1}, X_{2},\cdots,X_{n}\)</span> are the predictor variable values, and <span class="math notranslate nohighlight">\(\beta_{0},\beta_{1},\cdots,\beta_{n}\)</span> are the coefficients estimated by the model representing how the variables contribute to our log odds, when there is a one-unit change in the predictor. The <span class="math notranslate nohighlight">\(X\)</span> values will be represented by the features that we define as relevant for the analysis from our data set, these will include elements such as age, sex, passenger class, etc.</p>
 </section>
+<section id="consideration-of-other-models">
+<h3>Consideration of other models<a class="headerlink" href="#consideration-of-other-models" title="Permalink to this heading">#</a></h3>
+<p>We have considered employing other models including SVC, Random Forest, and Gradient Boosted Decision Trees in the analysis but we are motivated to solely use logisitic regression by the following factors:</p>
+<ol class="arabic simple">
+<li><p>Ease of interpretation: Logisitic regression estimates a set of slopes and an intercept, and all that estimates can be easily interpreted - a positive (negative) slope estimate indicates a postive (negative) association between that corresponding regressor and the target. Non-linear models are typically more difficult to interpret.</p></li>
+<li><p>Computationally inexpensive: The time and computational resources to run a logisitic regression is significantly smaller than other models that we have considered. Employing only logistic regression would reduce the time required to reproduce this analysis.</p></li>
+</ol>
+</section>
 <section id="selecting-from-data-set">
 <h3>Selecting From Data Set<a class="headerlink" href="#selecting-from-data-set" title="Permalink to this heading">#</a></h3>
-<p>In applying the Logistic Regression model to the Titanic Data set we aim to explore how different variables influence the likelihood of survival. Since we are only exploring estimation and understanding the relationship between our target and the predictors we will be using the training data set provided in order to fit our model and understand the relationships between features and the target. Contextually we will also select variables that make sense logically as well as in terms of contribution to avoid multicollinearity or variables that are redundant. To start off we will be dropping the values that are unique and carry very little information that could help our model in its estimations, these will be predictors such as Passenger ID, Name of Passenger, and Ticket ID. We also want to work on a complete data set, to avoid any unnecessary assumptions being made for imputing on missing values we will drop the Cabin variable as it is very spare and has a large number of missing values - In addition to this we will be dropping the Embarking Location variable as where the passengers got onto the ship is not relevant to the analysis since they were all on the ship once the catastrophe occurred. Regarding the variables that we are keeping, we will keep Passenger Class as this represents where in the boat they were located which can reflect their ease of exit, we will include Fare as this represents socio-economic status of how much was spent on their ticket which could result in a favorable outcome for them, we kept age and sex as this relates to the idea of ‘women and children first’ which is known as the Birkenhead Drill and is very relevant in maritime travel, we next include Sibling/Spouse and Parent/Children count to understand how one party on the boat could affect their changes of survival.</p>
+<p>In applying the Logistic Regression model to the Titanic Data set we aim to explore how different variables influence the likelihood of survival. Since we are only exploring estimation and understanding the relationship between our target and the predictors we will be using the training data set provided in order to fit our model and understand the relationships between features and the target. Contextually we will also select variables that make sense logically as well as in terms of contribution to avoid multicollinearity or variables that are redundant.</p>
+<p>To start off we will be dropping the values that are unique and carry very little information that could help our model in its estimations, these will be predictors such as Passenger ID, Name of Passenger, and Ticket ID. At first glance, the Ticket IDs are encoded with interesting prefixes, e.g. A/5, STON/O2., etc, which might provide explantory power. However, we have found that not all tickets IDs contain such prefix, and including them would introduce noise to the model fitting. Presumably these prefixes are related to the Passenger Class, including ticket ID as a regressor risks introducing multicollinearity.</p>
+<p>We also want to work on a complete data set, to avoid any unnecessary assumptions being made for imputing on missing values we will drop the Cabin variable as it is very spare and has a large number of missing values - In addition to this we will be dropping the Embarking Location variable as where the passengers got onto the ship is not relevant to the analysis since they were all on the ship once the catastrophe occurred. Regarding the variables that we are keeping, we will keep Passenger Class as this represents where in the boat they were located which can reflect their ease of exit, we will include Fare as this represents socio-economic status of how much was spent on their ticket which could result in a favorable outcome for them, we kept age and sex as this relates to the idea of ‘women and children first’ which is known as the Birkenhead Drill and is very relevant in maritime travel, we next include Sibling/Spouse and Parent/Children count to understand how one party on the boat could affect their changes of survival.</p>
 </section>
 </section>
 <section id="exploratory-data-analysis">
@@ -372,7 +396,7 @@ document.write(`
 </figcaption>
 </figure>
 <figure class="align-default" id="perplot">
-<a class="reference internal image-reference" href="_images/personal_plot.png"><img alt="_images/personal_plot.png" src="_images/personal_plot.png" style="height: 200px;" /></a>
+<a class="reference internal image-reference" href="_images/personal_plot.png"><img alt="_images/personal_plot.png" src="_images/personal_plot.png" style="height: 400px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 2 </span><span class="caption-text">Distribution by sex and age group</span><a class="headerlink" href="#perplot" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -385,8 +409,10 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[log(\frac{p}{1-p}) = \beta_0 + \beta_{Class = 1} + \beta_{Class = 2} + \beta_{Class = 3}+ \beta_{Sex = Female} + \beta_{Sex = Male}\]</div>
 <div class="math notranslate nohighlight">
-\[+ \beta_{Count\;Sibling\;Spouse}+ \beta_{Count\;Parent\;Child} + \beta_{Fare} + \beta_{AgeGroup=Child}+ \beta_{AgeGroup=Teen} + \beta_{AgeGroup=Adult} + \beta_{AgeGroup=Senior}\]</div>
-<figure class="align-default">
+\[+ \beta_{Count\;Sibling\;Spouse}+ \beta_{Count\;Parent\;Child} + \beta_{Fare} + \beta_{AgeGroup=Child}\]</div>
+<div class="math notranslate nohighlight">
+\[+ \beta_{AgeGroup=Teen} + \beta_{AgeGroup=Adult} + \beta_{AgeGroup=Senior}\]</div>
+<figure class="align-default" id="id16">
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -497,7 +523,10 @@ document.write(`
     </tr>
   </tbody>
 </table>
-</div></div></figure>
+</div></div><figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Model Summary</span><a class="headerlink" href="#id16" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Out base model is one with Passengers that are Female, are in First Class, and are in the age group of Child. We can now look at the results of our logistic regression model and inspect the coefficient values to understand what predictors effect the log odds and probability of someone surviving the Titanic.</p>
 <p>The logistic regression results provide valuable insights into the factors affecting the likelihood of survival on the Titanic. Each coefficient in the table represents the log odds of survival for each unit change in the predictor, while holding all other predictors constant.</p>
 <ul class="simple">
@@ -529,29 +558,35 @@ Additionally, if we had more time, it would be worth while to also model this da
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <div class="docutils container" id="id8">
-<dl class="citation">
-<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id1">Cli13</a></span></dt>
-<dd><p>Seth Cline. The 8 worst cruise ship disasters. 2013.</p>
-</dd>
-<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id2">Dai23</a></span></dt>
-<dd><p>Space Coast Daily. How many crew members die on cruise ships each year. 2023.</p>
-</dd>
-<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id7">Hen15</a></span></dt>
-<dd><p>P Hendricks. Titanic: titanic passenger survival data set. <em>R package version 0.1. 0</em>, 2015.</p>
-</dd>
-<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id3">Tea10</a></span></dt>
-<dd><p>R Developement Core Team. R: a language and environment for statistical computing. <em>(No Title)</em>, 2010.</p>
-</dd>
-<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id6">VRD09</a></span></dt>
-<dd><p>Guido Van Rossum and Fred L. Drake. <em>Python 3 Reference Manual</em>. CreateSpace, Scotts Valley, CA, 2009. ISBN 1441412697.</p>
-</dd>
-<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id5">WFranccoisH+15</a></span></dt>
-<dd><p>Hadley Wickham, Romain François, Lionel Henry, Kirill Müller, and others. Dplyr: a grammar of data manipulation. <em>R package version 0.4</em>, 3:p156, 2015.</p>
-</dd>
-<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id4">WcCetinkayaRG23</a></span></dt>
-<dd><p>Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. <em>R for data science</em>. &quot; O'Reilly Media, Inc.&quot;, 2023.</p>
-</dd>
-</dl>
+<div class="citation" id="id12" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">Cli13</a><span class="fn-bracket">]</span></span>
+<p>Seth Cline. The 8 worst cruise ship disasters. 2013.</p>
+</div>
+<div class="citation" id="id13" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">Dai23</a><span class="fn-bracket">]</span></span>
+<p>Space Coast Daily. How many crew members die on cruise ships each year. 2023.</p>
+</div>
+<div class="citation" id="id9" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">Hen15</a><span class="fn-bracket">]</span></span>
+<p>P Hendricks. Titanic: titanic passenger survival data set. <em>R package version 0.1. 0</em>, 2015.</p>
+</div>
+<div class="citation" id="id10" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">Tea10</a><span class="fn-bracket">]</span></span>
+<p>R Developement Core Team. R: a language and environment for statistical computing. <em>(No Title)</em>, 2010.</p>
+</div>
+<div class="citation" id="id15" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">VRD09</a><span class="fn-bracket">]</span></span>
+<p>Guido Van Rossum and Fred L. Drake. <em>Python 3 Reference Manual</em>. CreateSpace, Scotts Valley, CA, 2009. ISBN 1441412697.</p>
+</div>
+<div class="citation" id="id11" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">WFranccoisH+15</a><span class="fn-bracket">]</span></span>
+<p>Hadley Wickham, Romain François, Lionel Henry, Kirill Müller, and others. Dplyr: a grammar of data manipulation. <em>R package version 0.4</em>, 3:p156, 2015.</p>
+</div>
+<div class="citation" id="id14" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">WcCetinkayaRG23</a><span class="fn-bracket">]</span></span>
+<p>Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. <em>R for data science</em>. &quot; O'Reilly Media, Inc.&quot;, 2023.</p>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -601,10 +636,12 @@ Additionally, if we had more time, it would be worth while to also model this da
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-and-analysis">Methodology and Analysis</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-regression">Logistic Regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consideration-of-other-models">Consideration of other models</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-from-data-set">Selecting From Data Set</a></li>
 </ul>
 </li>
