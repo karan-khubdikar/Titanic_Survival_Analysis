@@ -6,22 +6,20 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- In analysis_titanic_survival.ipynb, explanation to why logisitc regression is chosen
-- In analysis_titanic_survival.ipynb, explanation to why Ticket ID is dropped despite it appearing to contain information that can be used to train the model
-- In analysis_titanic_survival.ipynb, included a new Summary section as a precursor to our introduction and report - gives a quick overview of the report, reasoning, methods, and results.
+- In analysis_titanic_survival.ipynb, explanation to why logisitc regression is chosen ([link](https://github.com/UBC-MDS/What-Effects-One-Chance-of-Survival-on-the-Titanic-A-Logistic-Regression-Analysis/pull/71/commits/443803704f54997b2add114e4a9400ede80d6f66)).
+- In analysis_titanic_survival.ipynb, explanation to why Ticket ID is dropped despite it appearing to contain information that can be used to train the model ([link](https://github.com/UBC-MDS/What-Effects-One-Chance-of-Survival-on-the-Titanic-A-Logistic-Regression-Analysis/pull/70/commits/d69e3761512384c77a562138258d9d54401de5fa)).
+- In analysis_titanic_survival.ipynb, included a new Summary section as a precursor to our introduction and report - gives a quick overview of the report, reasoning, methods, and results ([link](https://github.com/UBC-MDS/What-Effects-One-Chance-of-Survival-on-the-Titanic-A-Logistic-Regression-Analysis/pull/75/commits/848e060525b1459e5ba4e5baee0bcc098ac8be91)).
 
 ### Changed
 
-- Modification to existing features.
-- Modifications to analysis_titanic_survival.ipynb, updated reports Introduction section in order to include more reasoning behind our motivation to explore the dataset, and reasoing behind our methods and as to why the analysis uses a single dataset (this is to do with the differences between inference and prediction stated)
-- Modification to analysis_titanic_survival.ipynb, as per the changes in the Introduction introducing our methods more indepth, the reasoning behind using an inference approach rather than a predictive approach for the report, and the methods employed due to these choices we explained more clearly. More information related to not using a testing set and various metrics were also explored.
-- Modification to README, updated About section in order to give readers an more clear and indepth understanding of the content within the report and project apon first glance of the repo. Information related to data set, motivations, methods, and results were included.
+- Modifications to analysis_titanic_survival.ipynb, updated reports Introduction section in order to include more reasoning behind our motivation to explore the dataset, and reasoing behind our methods and as to why the analysis uses a single dataset (this is to do with the differences between inference and prediction stated) ([link](https://github.com/UBC-MDS/What-Effects-One-Chance-of-Survival-on-the-Titanic-A-Logistic-Regression-Analysis/pull/76/commits/bf6c37cc6b9489b1c9929bab272f384c2d382a2a)).
+- Modification to analysis_titanic_survival.ipynb, as per the changes in the Introduction introducing our methods more indepth, the reasoning behind using an inference approach rather than a predictive approach for the report, and the methods employed due to these choices we explained more clearly. More information related to not using a testing set and various metrics were also explored ([link](https://github.com/UBC-MDS/What-Effects-One-Chance-of-Survival-on-the-Titanic-A-Logistic-Regression-Analysis/pull/76/commits/bf6c37cc6b9489b1c9929bab272f384c2d382a2a)).
+- Modification to README, updated About section in order to give readers an more clear and indepth understanding of the content within the report and project apon first glance of the repo. Information related to data set, motivations, methods, and results were included ([link](https://github.com/UBC-MDS/What-Effects-One-Chance-of-Survival-on-the-Titanic-A-Logistic-Regression-Analysis/pull/77/commits/324073e9283702bbe7732ddbde65f4bc3b4aacab)).
 
 ### Removed
 
-- Deprecated features that have been removed.
+- Deprecated features that have been removed, older reports have been removed.
 
 ### Fixed
 
-- Bug fixes.
-- For running the docker container, the docker compose file by default is using port 8888. This is usually the default port used by Jupyter which we almost all are already using this port. Assign another port in the docker compose, for more convenience and ease of reproducibility.
+- For running the docker container, the docker compose file by default is using port 8888. This is usually the default port used by Jupyter which we almost all are already using this port. Assign another port in the docker compose, for more convenience and ease of reproducibility ([link](https://github.com/UBC-MDS/What-Effects-One-Chance-of-Survival-on-the-Titanic-A-Logistic-Regression-Analysis/pull/72/commits/aae40b94e06677cb8943946e04c41ec96d71ef22)).
