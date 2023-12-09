@@ -30,6 +30,7 @@ results/plots/personal_plot.png \
 results/models/logistic_model.rds \
 results/models/model_summary_table.csv
 	jupyter-book build report
+	cp -r report/_build/html/* docs
 
 clean:
 	rm -f data/Processed/selected_columns.csv
