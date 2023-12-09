@@ -48,7 +48,7 @@ cd ./work
 4. **Clean the results**: Run the following commands in the terminal.
 
 ```
-clean all
+make clean
 ```
 5. **Reproduce the results**: Run the following commands in the terminal.
 
