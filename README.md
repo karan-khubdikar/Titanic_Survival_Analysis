@@ -31,7 +31,7 @@ The analysis leverages the *Titanic Passenger Survival Data Set*, which is a com
     docker compose up
     ```
 
-2. **Access Jupyter Lab**: After running the command, a URL should appear in the terminal. It will look something like `http://127.0.0.1:8888/lab?token=`. Copy and paste this URL into your web browser to access Jupyter Lab.
+2. **Access Jupyter Lab**: After running the command, a URL should appear in the terminal. It will look something like `http://127.0.0.1:8888/lab?token=`. Copy and paste this URL into your web browser to access Jupyter Lab. Replace the port number with the one (9000) specified in the `docker-compose.yml` file. The token is a unique identifier that is generated each time you run the Docker container. It is used to authenticate your access to Jupyter Lab.
 
  ![Jupyter Container Web App Launch URL](img/jupyter-container-web-app-launch-url.png)
 
@@ -74,7 +74,7 @@ cp -r report/_build/html/* docs
 
 ### Adding a New Dependency
 
-1. **Modify Dockerfile**: Add the new dependency to the `Dockerfile`. Create a new branch for these changes.
+1. **Modify Dockerfile**: Add the new dependency to the `Dockerfile`. Create a new branch for these changes. 
 
 2. **Build Docker Image Locally**: Ensure the Docker image builds and runs correctly on your local machine.
 

@@ -20,3 +20,4 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 
 - Bug fixes.
+- For running the docker container, the docker compose file by default is using port 8888. This is usually the default port used by Jupyter which we almost all are already using this port. Assign another port in the docker compose, for more convenience and ease of reproducibility.
