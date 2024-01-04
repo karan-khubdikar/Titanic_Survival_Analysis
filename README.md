@@ -1,4 +1,4 @@
-# Titanic survivor prediction by DSCI_522_Group-4
+# Titanic Survivor Analysis
 
 An analytical exploration into the factors influencing survival rates on the RMS Titanic.
 
@@ -9,16 +9,22 @@ An analytical exploration into the factors influencing survival rates on the RMS
 - Karan Khubdikar
 - Alan Powichrowshi
 
+## Main Purpose of the Project
+The main intent of the project was to understand how to automate an analysis. The usage of the docker image and environment file allows other contributors to recreate the analysis without much effort. 
+
+## My Contribution to the Project
+I was responsible for managing the Exploratory Data Analysis (EDA). The EDA section of the report, the EDA function scripts, and test cases for the script were all handled by me. In addition to that, I also contributed to creating the environment.yml file to help others who want to recreate the analysis.
+
 ## About
 
-This report examines the historic Titanic disaster, and focuses on understanding what factors influence passengers survival in case of emergency on a vessel. We employed a statistical analysis on a plethora of parameters, such as age, sec, ticket pricing, and a number of others to determine their impact and relationship on survival likelihood of a passenger. Our report employs logistic regression analysis to understand the relationship between various parameters and survival as mentioned. Unlike predictive models, our focus is on inference, examining how factors like age, gender, class, and cabin location influenced the likelihood of survival - for this reason we only built our model off of one data set without training and testing, as we are looking to only make an inference and understand the relationship between variables. Our findings show us significant disparities, particularly highlighting the better survival chances of women and higher-class passengers - which introduces a socioeconomic factor to survival. The main results observed through our report are as followed:
+This report examines the historic Titanic disaster and focuses on understanding what factors influence passengers' survival in case of emergency on a vessel. We employed a statistical analysis on a plethora of parameters, such as age, sec, ticket pricing, and a number of others to determine their impact and relationship on the survival likelihood of a passenger. Our report employs logistic regression analysis to understand the relationship between various parameters and survival as mentioned. Unlike predictive models, our focus is on inference, examining how factors like age, gender, class, and cabin location influenced the likelihood of survival - for this reason, we only built our model off of one data set without training and testing, as we are looking to only make an inference and understand the relationship between variables. Our findings show us significant disparities, particularly highlighting the better survival chances of women and higher-class passengers - which introduces a socioeconomic factor to survival. The main results observed through our report are as follows:
 
 - Passenger Class: There's a clear negative correlation between passenger class and survival probability. Passengers in lower classes (2nd and 3rd) had significantly lower odds of surviving compared to those in 1st class.
 - Gender: Female passengers had a much higher chance of survival than male passengers.
 - Age: Age groups also played a critical role. Children had a higher survival rate, while seniors had the lowest.
 - Socio-Economic Status: Represented by fare, it had a lesser impact on survival probability.
 
-The analysis, though limited by the historical data available, provides valuable insights into the social and personal dynamics of survival in maritime disasters. This report serves as a preliminary step into understanding what factors effect ones changes of survival in case of a maritime disaster, and can be built on upon with further feature engineering and model types to help move this analysis into the domain of prediction and making steps to reducing fatalities on water vessels. The analysis leverages the *Titanic Passenger Survival Data Set*, which is a compilation of passenger data from RMS Titanic. The analysis will be conducted using R and Python.
+The analysis, though limited by the historical data available, provides valuable insights into the social and personal dynamics of survival in maritime disasters. This report serves as a preliminary step into understanding what factors affect one's chances of survival in case of a maritime disaster and can be built on upon with further feature engineering and model types to help move this analysis into the domain of prediction and making steps to reducing fatalities on water vessels. The analysis leverages the *Titanic Passenger Survival Data Set*, a compilation of passenger data from RMS Titanic. The analysis will be conducted using R and Python.
 
 ## Usage Instructions
 
